@@ -1,25 +1,39 @@
-<div [@routerTransition]>
-	<h2 class="text-muted">Celebraity</h2>
+<div>
+	<h2 class="text-muted">Celebrity</h2>
 	<div class="col-xl-12">
-		<p-table [value]="cars">
+		<p-table [value]="celebrity" [responsive]="true" [paginator]="true" [rows]="10">
 		    <ng-template pTemplate="header">
 		        <tr>
-		            <th>Name</th>
-		            <th>Mobile</th>
-		            <th>Total Customers</th>
-		            <th>Created On</th>
-		            <th>Edit</th>
-		            <th>Status</th>
+					<th style="width:10%"><button type="button" class="btn btn-primary">Add</button>
+					</th>
+					<th style="width:10%"></th>
+					<th [pSortableColumn]="'name'">
+						Name<p-sortIcon [field]="'name'"></p-sortIcon>
+					</th>
+		            <th [pSortableColumn]="'mobile'">
+						Mobile<p-sortIcon [field]="'mobile'"></p-sortIcon>
+					</th>
+					<th [pSortableColumn]="'username'">
+						Username<p-sortIcon [field]="'username'"></p-sortIcon>
+					</th>
+		            <th [pSortableColumn]="'total_customer'">
+						Customers<p-sortIcon [field]="'total_customer'"></p-sortIcon>
+					</th>
+		            <th [pSortableColumn]="'createdOn'">
+						Created On<p-sortIcon [field]="'createdOn'"></p-sortIcon>
+					</th>
+
 		        </tr>
 		    </ng-template>
-		    <ng-template pTemplate="body" let-car>
+		    <ng-template pTemplate="body" let-rowData>
 		        <tr>
-		            <td>1</td>
-		            <td>1</td>
-		            <td>1</td>
-		            <td>1</td>
-		            <td>1</td>
-		            <td>1</td>
+					<td><span class="fa fa-fw fa-edit"></span></td>
+					<td><span class="fa fa-fw fa-close"></span></td>
+		            <td>{{rowData.name}}</td>
+					<td>{{rowData.mobile}}</td>
+					<td>{{rowData.username}}</td>
+		            <td>{{rowData.total_customer}}</td>
+		            <td>25-08-2018</td>
 		        </tr>
 		    </ng-template>
 		</p-table>

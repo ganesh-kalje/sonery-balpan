@@ -1,0 +1,122 @@
+[
+  {
+    "name" : "Veena Ramkissoon",
+    "address" : "43, Bandra, Pune - 444805",
+    "username" : "usman.mani",
+    "email" : "bchohan@srivastava.com",
+    "mobile" : 5294863403,
+    "adhar_number" : 12457898,
+    "total_customer" : 12,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Nupoor Rastogi",
+    "address" : "10, MeghaPur, Agra - 300194",
+    "username" : "mand.rajendra",
+    "email" : "xmurthy@yahoo.co.in",
+    "mobile" : "07340438331",
+    "adhar_number" : 12457898,
+    "total_customer" : 52,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Fakaruddin Meka",
+    "address" : "24, Jatin Apartments, Kormangala Kochi - 454397",
+    "username" : "radhika.kata",
+    "email" : "neela.nawal@yahoo.com",
+    "mobile" : "6913858182",
+    "adhar_number" : 12457898,
+    "total_customer" : 5,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Urvashi Faraz Goda",
+    "address" : "62, Cyber City, Ahmedabad - 539222",
+    "username" : "ricky44",
+    "email" : "zreddy@rediffmail.com",
+    "mobile" : "00318838561",
+    "adhar-number" : 12457898,
+    "total_customer" : 8,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Tabeed Charlie Prasad",
+    "address" : "33, Satishwar Villas, RomaPur Noida - 477694",
+    "username" : "ricky44",
+    "email" : "hans.teena@yahoo.co.in",
+    "mobile" : "6008926855",
+    "adhar-number" : 12457898,
+    "total_customer" : 6,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Deep Suresh Mangal",
+    "address" : "45, Sona Villas, AditiGarh Surat - 529852",
+    "username" : "nikita94",
+    "email" : "sood.mohan@rattan.com",
+    "mobile" : "9161086794",
+    "adhar-number" : 12457898,
+    "total_customer" : 56,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Jasmin Peri",
+    "address" : "88, Yerwada, Vadodara - 292868",
+    "username" : "cvig",
+    "email" : "ajinkya48@hotmail.com",
+    "mobile" : "00232266099",
+    "adhar-number" : 12457898,
+    "total_customer" : 55,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Baber Kabra",
+    "address" : "15, Hinjewadi, Mysore - 351508",
+    "username" : "bava.leela",
+    "email" : "qupadhyay@gokhale.in",
+    "mobile" : "01766456991",
+    "adhar-number" : 12457898,
+    "total_customer" : 78,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Upasana Arora",
+    "address" : "30, Aarushi Villas, MowgliGunj Kochi - 338885",
+    "username" : "cwalia",
+    "email" : "rdave@yahoo.co.in",
+    "mobile" : "5404123827",
+    "adhar-number" : 12457898,
+    "total_customer" : 78,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Mohit Raj Salvi",
+    "address" : "11, Deccan Gymkhana, Kota - 587695",
+    "username" : "cwalia",
+    "email" : "mukti.tandon@ranganathan.com",
+    "mobile" : "9316007493",
+    "adhar-number" : 12457898,
+    "total_customer" : 78,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Jasmin Peri",
+    "address" : "88, Yerwada, Vadodara - 292868",
+    "username" : "cvig",
+    "email" : "ajinkya48@hotmail.com",
+    "mobile" : "00232266099",
+    "adhar-number" : 12457898,
+    "total_customer" : 55,
+    "createdOn" : ""
+  },
+  {
+    "name" : "Baber Kabra",
+    "address" : "15, Hinjewadi, Mysore - 351508",
+    "username" : "bava.leela",
+    "email" : "qupadhyay@gokhale.in",
+    "mobile" : "01766456991",
+    "adhar-number" : 12457898,
+    "total_customer" : 78,
+    "createdOn" : ""
+  }
+]

@@ -4,7 +4,7 @@
 		<p-table [value]="celebrity" [responsive]="true" [paginator]="true" [rows]="10">
 		    <ng-template pTemplate="header">
 		        <tr>
-					<th style="width:10%"><button type="button" class="btn btn-primary">Add</button>
+					<th style="width:10%"><button [routerLink]="['add']" type="button" class="btn btn-primary">Add</button>
 					</th>
 					<th style="width:10%"></th>
 					<th [pSortableColumn]="'name'">

@@ -16,6 +16,14 @@
             <i class="fa fa-fw fa-money"></i>&nbsp;
             <span>Bonus</span>
         </a>
+        <a [routerLink]="['/bonus']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-user-o"></i>&nbsp;
+            <span>Change Password</span>
+        </a>
+        <a [routerLink]="['/bonus']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-sign-out"></i>&nbsp;
+            <span>Logout</span>
+        </a>
     </div>
     <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
         <i class="fa fa-fw fa-angle-double-left"></i>&nbsp;

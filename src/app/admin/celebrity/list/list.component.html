@@ -1,12 +1,13 @@
 <div>
 	<h2 class="text-muted">Celebrity</h2>
 	<div class="col-xl-12">
-		<p-table [value]="celebrity" [responsive]="true" [paginator]="true" [rows]="10">
+		<p-table #dt [value]="celebrity" [responsive]="true" [paginator]="true" [rows]="10">
 		    <ng-template pTemplate="header">
 		        <tr>
-					<th style="width:10%"><button [routerLink]="['add']" type="button" class="btn btn-primary">Add</button>
+					<th style="width:3%">
+						<span [routerLink]="['add']" class="fa fa-fw fa-plus-circle"></span>
 					</th>
-					<th style="width:10%"></th>
+					<th style="width:3%"></th>
 					<th [pSortableColumn]="'name'">
 						Name<p-sortIcon [field]="'name'"></p-sortIcon>
 					</th>
@@ -22,8 +23,26 @@
 		            <th [pSortableColumn]="'createdOn'">
 						Created On<p-sortIcon [field]="'createdOn'"></p-sortIcon>
 					</th>
-
-		        </tr>
+				</tr>
+				<tr>
+					<th></th>
+					<th></th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'name', 'contains')">
+		            </th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'mobile', 'contains')">
+		            </th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'username', 'contains')">
+		            </th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'total_customer', 'contains')">
+		            </th>
+		            <th>
+	            		<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'createdOn','contains')">
+		            </th>
+        		</tr>
 		    </ng-template>
 		    <ng-template pTemplate="body" let-rowData>
 		        <tr>

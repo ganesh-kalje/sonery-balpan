@@ -13,7 +13,12 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {}
 
-    onLoggedin() {
-        localStorage.setItem('isLoggedin', 'true');
+    onLoggedin(username, password) {
+    	if(username === '9762029258' && password === 'admin') {
+    		this.router.navigate(['dashboard']);
+    	} else {
+            this.router.navigate(['cl']);
+    	}
+    	localStorage.setItem('isLoggedin', 'true');
     }
 }

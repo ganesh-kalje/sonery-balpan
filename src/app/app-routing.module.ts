@@ -5,6 +5,7 @@ import { AuthGuard } from './shared';
 
 const routes: Routes = [
     { path: '', loadChildren: './admin/admin.module#AdminModule', canActivate: [AuthGuard] },
+    { path: 'cl', loadChildren: './cl/cl.module#ClModule', canActivate: [AuthGuard] },
     /*{ path: '', loadChildren: './layout/layout.module#LayoutModule', canActivate: [AuthGuard] },*/
     { path: 'login', loadChildren: './login/login.module#LoginModule' },
     { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },

@@ -71,4 +71,9 @@ export class SidebarComponent {
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
     }
+
+    logout() {
+        localStorage.removeItem('isLoggedin');
+        this.router.navigate(['login']);
+    }
 }

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BonusRoutingModule } from './bonus-routing.module';
-import { BonusComponent } from './bonus/bonus.component';
+import { ProfileRoutingModule } from './profile-routing.module';
+import { ProfileComponent } from './profile/profile.component';
 import {PanelModule} from "primeng/panel";
 import {DropdownModule, InputTextareaModule, InputTextModule, TabViewModule} from "primeng/primeng";
 import {ButtonModule} from "primeng/button";
@@ -12,16 +12,16 @@ import {ToastModule} from "primeng/toast";
 @NgModule({
   imports: [
     CommonModule,
-    BonusRoutingModule,
-    ToastModule,
-    MessageModule,
+    ProfileRoutingModule,
     PanelModule,
-    DropdownModule,
-    InputTextModule,
-    InputTextareaModule,
-    ButtonModule,
-    TabViewModule
+    DropdownModule, 
+    InputTextareaModule, 
+    InputTextModule, 
+    TabViewModule, 
+    ButtonModule, 
+    MessageModule,
+    ToastModule
   ],
-  declarations: [BonusComponent]
+  declarations: [ProfileComponent]
 })
-export class BonusModule { }
+export class ProfileModule { }

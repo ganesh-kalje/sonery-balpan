@@ -4,6 +4,10 @@
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
+        <a routerLink="cl-customers" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-street-view"></i>&nbsp;
+            <span>{{ 'Customers' | translate }}</span>
+        </a>
         <a  href="javascript:void(0)" class="list-group-item" (click)="logout()">
             <i class="fa fa-fw fa-sign-out"></i>&nbsp;
             <span>Logout</span>

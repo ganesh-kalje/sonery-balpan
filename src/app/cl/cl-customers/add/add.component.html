@@ -1,0 +1,67 @@
+<div [@routerTransition]> 
+  <form>
+    <p-panel header="Add Customer">
+      <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            Name *:
+          </div>
+          <div class="ui-grid-col-6">
+            <input pInputText type="text"  placeholder="Required"/>
+          </div>
+          <div class="ui-grid-col-4"></div>
+        </div>
+
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            Child Name *:
+          </div>
+          <div class="ui-grid-col-6">
+            <input pInputText type="text"  placeholder="Required"/>
+          </div>
+          <div class="ui-grid-col-4"></div>
+        </div>
+
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            Date Of Birth *:
+          </div>
+          <div class="ui-grid-col-6">
+            <p-calendar [shortYearCutoff]="'20'"></p-calendar>
+          </div>
+          <div class="ui-grid-col-4"></div>
+        </div>
+
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            Address *:
+          </div>
+          <div class="ui-grid-col-6">
+            <input pInputText type="text"  placeholder="Required"/>
+          </div>
+          <div class="ui-grid-col-4"></div>
+        </div>
+
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2">
+            Mobile *:
+          </div>
+          <div class="ui-grid-col-6">
+            <input pInputText type="text"  placeholder="Required"/>
+          </div>
+          <div class="ui-grid-col-4"></div>
+        </div>
+
+        
+
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-2"></div>
+          <div class="ui-grid-col-6">
+            <button pButton type="submit" label="Submit"></button>
+          </div>
+          <div class="ui-grid-col-4"></div>
+        </div>
+      </div>
+    </p-panel>
+  </form>
+</div>

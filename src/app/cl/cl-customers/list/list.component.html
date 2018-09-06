@@ -1,0 +1,60 @@
+<div [@routerTransition]>
+	<h2 class="text-muted">Customers</h2>
+	<div class="col-xl-12">
+		<p-table #dt [value]="customers" [responsive]="true" [paginator]="true" [rows]="10">
+		    <ng-template pTemplate="header">
+		        <tr>
+					<th style="width:3%">
+						<span [routerLink]="['cl-add']" class="fa fa-fw fa-plus-circle"></span>
+					</th>
+					<th style="width:3%"></th>
+					<th [pSortableColumn]="'name'">
+						Name<p-sortIcon [field]="'name'"></p-sortIcon>
+					</th>
+		            <th [pSortableColumn]="'phone'">
+						Mobile<p-sortIcon [field]="'phone'"></p-sortIcon>
+					</th>
+					<th [pSortableColumn]="'child_name'">
+						Child Name<p-sortIcon [field]="'child_name'"></p-sortIcon>
+					</th>
+					<th [pSortableColumn]="'date_of_birth'">
+						Child DOB<p-sortIcon [field]="'date_of_birth'"></p-sortIcon>
+					</th>
+					<th [pSortableColumn]="'total_orders'">
+						Total Orders<p-sortIcon [field]="'total_orders'"></p-sortIcon>
+					</th>
+		        </tr>
+				<tr>
+					<th></th>
+					<th></th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'name', 'contains')">
+		            </th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'phone', 'contains')">
+		            </th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'child_name', 'contains')">
+		            </th>
+		            <th>
+		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'date_of_birth', 'contains')">
+		            </th>
+		            <th>
+	            		<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'total_orders','contains')">
+		            </th>
+	            </tr>
+		    </ng-template>
+		    <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+		        <tr>
+					<td><span class="fa fa-fw fa-edit"></span></td>
+					<td><span class="fa fa-fw fa-close"></span></td>
+		            <td>{{rowData.name}}</td>
+					<td>{{rowData.phone}}</td>
+					<td>{{rowData.child_name}}</td>
+		            <td>{{rowData.date_of_birth | date:'dd/mm/yyyy'}}</td>
+		            <td>{{rowData.total_orders}}</td>
+		        </tr>
+		    </ng-template>
+		</p-table>
+	</div>
+</div>

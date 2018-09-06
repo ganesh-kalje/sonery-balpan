@@ -1,24 +1,8 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
     <div class="list-group">
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a routerLink="cl-dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
-        </a>
-        <a [routerLink]="['/celebrity']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-users"></i>&nbsp;
-            <span>Celebrity</span>
-        </a>
-        <a [routerLink]="['/customers']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-street-view"></i>&nbsp;
-            <span>Customers</span>
-        </a>
-        <a [routerLink]="['/bonus']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-money"></i>&nbsp;
-            <span>Bonus</span>
-        </a>
-        <a [routerLink]="['/password-change']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-user-o"></i>&nbsp;
-            <span>Change Password</span>
         </a>
         <a  href="javascript:void(0)" class="list-group-item" (click)="logout()">
             <i class="fa fa-fw fa-sign-out"></i>&nbsp;

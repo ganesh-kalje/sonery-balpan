@@ -8,6 +8,7 @@
 						<span [routerLink]="['add']" class="fa fa-fw fa-plus-circle"></span>
 					</th>
 					<th style="width:3%"></th>
+					<th style="width:3%"></th>
 					<th [pSortableColumn]="'name'">
 						Name<p-sortIcon [field]="'name'"></p-sortIcon>
 					</th>
@@ -20,11 +21,18 @@
 		            <th [pSortableColumn]="'total_customer'">
 						Customers<p-sortIcon [field]="'total_customer'"></p-sortIcon>
 					</th>
-		            <th [pSortableColumn]="'createdOn'">
-						Created On<p-sortIcon [field]="'createdOn'"></p-sortIcon>
+		            <th [pSortableColumn]="''">
+						Pending Bonus<p-sortIcon [field]="''"></p-sortIcon>
+					</th>
+					<th [pSortableColumn]="''">
+						Paid Bonus<p-sortIcon [field]="''"></p-sortIcon>
+					</th>
+					<th [pSortableColumn]="''">
+						Created On<p-sortIcon [field]="''"></p-sortIcon>
 					</th>
 				</tr>
 				<tr>
+					<th></th>
 					<th></th>
 					<th></th>
 		            <th>
@@ -39,6 +47,8 @@
 		            <th>
 		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'total_customer', 'contains')">
 		            </th>
+		            <th></th>
+		            <th></th>
 		            <th>
 	            		<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'createdOn','contains')">
 		            </th>
@@ -46,12 +56,15 @@
 		    </ng-template>
 		    <ng-template pTemplate="body" let-rowData>
 		        <tr>
-					<td><span class="fa fa-fw fa-edit"></span></td>
-					<td><span class="fa fa-fw fa-close"></span></td>
+					<td><span title="Edit" class="fa fa-fw fa-edit"></span></td>
+					<td><span title="Inactive" class="fa fa-fw fa-close"></span></td>
+					<td><span title="pay bonus" class="fa fa-inr"></span></td>
 		            <td>{{rowData.name}}</td>
 					<td>{{rowData.mobile}}</td>
 					<td>{{rowData.username}}</td>
 		            <td>{{rowData.total_customer}}</td>
+		            <td>250</td>
+		            <td>500</td>
 		            <td>25-08-2018</td>
 		        </tr>
 		    </ng-template>

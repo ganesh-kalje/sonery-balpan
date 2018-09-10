@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../../router.animations';
+import { CustomerService } from '../../../shared/services/customer.service';
 
 @Component({
   selector: 'app-list',
@@ -9,9 +10,13 @@ import { routerTransition } from '../../../router.animations';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
+  customers: any[];
 
   ngOnInit() {
+  	this.customerService.getCustomers().subscribe((data) => {
+  		this.customers = data;
+    });
   }
 
 }

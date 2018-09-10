@@ -10,6 +10,7 @@ const routes: Routes = [
             { path: '', redirectTo: 'cl-dashboard', pathMatch: 'prefix' },
             { path: 'cl-dashboard', loadChildren: './cl-dashboard/cl-dashboard.module#ClDashboardModule' },
             { path: 'cl-customers', loadChildren: './cl-customers/cl-customers.module#ClCustomersModule' },
+            { path: 'cl-bonus', loadChildren: './cl-bonus/cl-bonus.module#ClBonusModule' },
         ]
     }
 ];

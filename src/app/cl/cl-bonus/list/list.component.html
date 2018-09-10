@@ -1,0 +1,43 @@
+<div [@routerTransition]>
+	<h2 class="text-muted">Bonus</h2>
+	<div class="row">
+		<div class="col-xl-12" style="margin-bottom:3%">
+			<p-panel header="Pending Bonus">
+				<div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+					<div class="ui-grid-row">
+			          <div class="ui-grid-col-2">Pending Bonus *:</div>
+			          <div class="ui-grid-col-6">250/-</div>
+		          	  <div class="ui-grid-col-4"></div>
+		        	</div>
+				</div>
+			</p-panel>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xl-12">
+			<p-table #dt [value]="bonusList" [responsive]="true" [paginator]="true" [rows]="10">
+			    <ng-template pTemplate="header">
+			        <tr>
+						<th [pSortableColumn]="'name'">
+							DateTime<p-sortIcon [field]="'name'"></p-sortIcon>
+						</th>
+						<th [pSortableColumn]="'name'">
+							Bonus<p-sortIcon [field]="'name'"></p-sortIcon>
+						</th>
+			        </tr>
+				</ng-template>
+			    <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+			        <tr>
+						<td>21/02/2018 12:10</td>
+						<td>300</td>
+			        </tr>
+			    </ng-template>
+			    <ng-template pTemplate="summary">
+    				Total Bonus 600/-
+    			</ng-template>
+
+			</p-table>
+		</div>
+	</div>
+</div>

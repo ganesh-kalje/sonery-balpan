@@ -8,6 +8,7 @@ import {DropdownModule, InputTextareaModule, InputTextModule, TabViewModule} fro
 import {ButtonModule} from "primeng/button";
 import {MessageModule} from "primeng/message";
 import {ToastModule} from "primeng/toast";
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {ToastModule} from "primeng/toast";
     InputTextModule,
     InputTextareaModule,
     ButtonModule,
-    TabViewModule
+    TabViewModule,
+    TableModule
   ],
   declarations: [BonusComponent]
 })

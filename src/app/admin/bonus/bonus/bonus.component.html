@@ -1,26 +1,24 @@
 <div [@routerTransition]>
-  <form>
-    <p-panel header="Bonus">
-      <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
-        <div class="ui-grid-row">
-          <div class="ui-grid-col-2">
-            Bonus *:
-          </div>
-          <div class="ui-grid-col-4 ui-inputgroup">
-          	<input pInputText type="text"  placeholder="Required" value="5"/>
-          	<span class="ui-inputgroup-addon"><i class="fa fa-percent"></i></span>
-          </div>
-  		<div class="ui-grid-col-6"></div>
-        </div>
-  	
-  	<div class="ui-grid-row">
-          <div class="ui-grid-col-2"></div>
-          <div class="ui-grid-col-4">
-            <button pButton type="submit" label="Submit"></button>
-          </div>
-          <div class="ui-grid-col-6"></div>
-        </div>
-      </div>
-    </p-panel>
-  </form>
+  <p-table #dt [value]="bonus" [responsive]="true" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+          <tr>
+            <th [pSortableColumn]="'name'">Celebraty Name<p-sortIcon [field]="'name'"></p-sortIcon></th>
+            <th [pSortableColumn]="'amount'">Bonus Amount<p-sortIcon [field]="'amount'"></p-sortIcon></th>
+            <th [pSortableColumn]="'dateTime'">Date Time<p-sortIcon [field]="'dateTime'"></p-sortIcon></th>
+          </tr>
+          <tr>
+            <th><input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'name', 'contains')"></th>
+            <th><input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'amount', 'contains')"></th>
+            <th><input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'dateTime', 'contains')"></th>
+          </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-rowData>
+        <tr>
+          <td>{{rowData.name}}</td>
+          <td>{{rowData.amount}}</td>
+          <td>{{rowData.dateTime}}</td>
+        </tr>
+      </ng-template>
+  </p-table>
 </div>

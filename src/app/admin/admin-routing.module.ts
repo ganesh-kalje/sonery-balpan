@@ -13,6 +13,7 @@ const routes: Routes = [
             { path: 'customers', loadChildren: './customers/customers.module#CustomersModule' },
             { path: 'bonus', loadChildren: './bonus/bonus.module#BonusModule' },
             { path: 'password-change', loadChildren: './profile/profile.module#ProfileModule' },
+            { path: 'orders', loadChildren: './orders/orders.module#OrdersModule' }
         ]
     }
 ];

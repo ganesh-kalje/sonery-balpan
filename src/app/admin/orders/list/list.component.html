@@ -1,0 +1,41 @@
+<div [@routerTransition]>
+  <h2 class="text-muted">Orders</h2>
+  <p-table #dt [value]="orders" [responsive]="true" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 5%" >
+          <a *ngIf="!viewAddForm" (click)="showHideAddForm()" href="javascript:void(0)"> Add </a>
+          <a *ngIf="viewAddForm" (click)="showHideAddForm()" href="javascript:void(0)"> Close </a>
+        </th>
+        <th [pSortableColumn]="'name'">Order Number<p-sortIcon [field]="'name'"></p-sortIcon></th>
+        <th [pSortableColumn]="'amount'">Customer Name<p-sortIcon [field]="'amount'"></p-sortIcon></th>
+        <th [pSortableColumn]="'dateTime'">Total<p-sortIcon [field]="'dateTime'"></p-sortIcon></th>
+        <th [pSortableColumn]="'dateTime'">Date<p-sortIcon [field]="'dateTime'"></p-sortIcon></th>
+      </tr>
+      <tr>
+        <th style="width: 5%"></th>
+        <th><input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'name', 'contains')"></th>
+        <th><input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'amount', 'contains')"></th>
+        <th><input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'dateTime', 'contains')"></th>
+        <th><input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'dateTime', 'contains')"></th>
+      </tr>
+      <tr *ngIf="viewAddForm">
+        <th style="width: 5%"><a href="javascript:void">Save</a></th>
+        <th>25</th>
+        <th><input pInputText type="text" class="w-100" placeholder="Customer Name"></th>
+        <th><input pInputText type="text" class="w-100" placeholder="Total"></th>
+        <th>{{ currentDate | date}}</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData>
+      <tr>
+        <td><span title="Inactive" class="fa fa-fw fa-close"></span></td>
+        <td>{{rowData.order_number}}</td>
+        <td>{{rowData.name}}</td>
+        <td>{{rowData.total}}</td>
+        <td>{{rowData.order_date}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -9,6 +9,7 @@ import { AdminComponent } from './admin.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import {CelebrityService} from './service/celebrity.service';
+import {AdminService} from './service/admin.service';
 
 
 @NgModule({
@@ -20,6 +21,6 @@ import {CelebrityService} from './service/celebrity.service';
     TranslateModule
   ],
   declarations: [AdminComponent, SidebarComponent, HeaderComponent],
-  providers: [CelebrityService]
+  providers: [CelebrityService, AdminService]
 })
 export class AdminModule { }

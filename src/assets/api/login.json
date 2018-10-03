@@ -1,0 +1,14 @@
+{
+    "id" : 1,
+    "name": "Admin",
+    "mobile": "9762029258",
+    "password": "",
+    "address": "",
+    "adhar_card": "",
+    "pan_card": "",
+    "user_type": "0",
+    "total_allowance": "",
+    "is_active": 0,
+    "auth_token" : "some token values",
+    "created_on": ""
+}

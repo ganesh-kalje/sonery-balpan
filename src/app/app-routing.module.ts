@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AuthGuard } from './shared';
+import { AuthGuard, AdminGuard, CelebrityGuard } from './shared';
 
 const routes: Routes = [
-    { path: '', loadChildren: './admin/admin.module#AdminModule', canActivate: [AuthGuard] },
-    { path: 'cl', loadChildren: './cl/cl.module#ClModule', canActivate: [AuthGuard] },
+    { path: '', loadChildren: './admin/admin.module#AdminModule', canActivate: [AuthGuard, AdminGuard] },
+    { path: 'cl', loadChildren: './cl/cl.module#ClModule', canActivate: [AuthGuard, CelebrityGuard] },
     /*{ path: '', loadChildren: './layout/layout.module#LayoutModule', canActivate: [AuthGuard] },*/
     { path: 'login', loadChildren: './login/login.module#LoginModule' },
     { path: 'signup', loadChildren: './signup/signup.module#SignupModule' },

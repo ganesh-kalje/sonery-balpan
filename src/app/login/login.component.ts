@@ -27,17 +27,16 @@ export class LoginComponent implements OnInit {
 
     onLoggedIn(username, password) {
         this.loginService.login({'mobile': username, password: password}).subscribe((data) => {
-            console.log(data);
+            localStorage.setItem('currentUser', JSON.stringify(data));
+            localStorage.setItem('authToken', data.authToken);
+            localStorage.setItem('isLoggedin', 'true');
+            if (data.user_type === '0') {
+                this.router.navigate(['dashboard']);
+            } else if (data.user_type === '1') {
+                this.router.navigate(['cl']);
+            }
         }, (errorResponse) => {
             console.log(errorResponse);
         });
-
-        /*if(username === '9762029258' && password === 'admin') {
-    		this.router.navigate(['dashboard']);
-    	} else {
-            this.router.navigate(['cl']);
-    	}
-    	localStorage.setItem('isLoggedin', 'true');
-    	*/
     }
 }

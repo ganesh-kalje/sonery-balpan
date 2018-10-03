@@ -1,1 +1,5 @@
 <router-outlet></router-outlet>
+<p-toast position="top-center"></p-toast>
+<p-blockUI [blocked]="blockDashboard">
+    <p-progressSpinner [ngStyle]="{position: 'absolute', top: '25%', left : '50%'}" animationDuration=".5s"></p-progressSpinner>
+</p-blockUI>

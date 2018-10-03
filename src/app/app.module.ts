@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard, AdminGuard, CelebrityGuard } from './shared';
 import {LoginService} from './shared/services/login.service';
+import {ToastModule} from 'primeng/toast';
+import {BlockUIModule} from 'primeng/blockui';
+import {MessageService} from 'primeng/api';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {SharedService} from './shared/services/shared.service';
+import {LoaderInterceptorService} from './shared/services/loader-interceptor.service';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -35,10 +41,24 @@ export const createTranslateLoader = (http: HttpClient) => {
                 deps: [HttpClient]
             }
         }),
-       AppRoutingModule
+       AppRoutingModule,
+       ToastModule,
+       BlockUIModule,
+       ProgressSpinnerModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard, LoginService, AdminGuard, CelebrityGuard],
+    providers: [
+        AuthGuard,
+        LoginService,
+        AdminGuard,
+        CelebrityGuard,
+        MessageService,
+        SharedService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LoaderInterceptorService,
+            multi: true
+        }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

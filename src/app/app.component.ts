@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedService} from './shared/services/shared.service';
 
 @Component({
     selector: 'app-root',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    constructor() {
+    blockDashboard$;
+    blockDashboard = false;
+
+    constructor(private sharedService: SharedService) {
     }
 
     ngOnInit() {
+        this.blockDashboard$ = this.sharedService.blockUiObservable.subscribe((value) => {
+            this.blockDashboard = value;
+        });
     }
 }

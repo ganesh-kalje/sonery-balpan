@@ -5,9 +5,8 @@
 		    <ng-template pTemplate="header">
 		        <tr>
 					<th style="width:3%">
-						<span [routerLink]="['add']" class="fa fa-fw fa-plus-circle"></span>
+						<a  href="javascript:void(0)" [routerLink]="['add']"><span class="fa fa-fw fa-plus-circle"></span></a>
 					</th>
-					<th style="width:3%"></th>
 					<th style="width:3%"></th>
 					<th [pSortableColumn]="'name'">
 						Name<p-sortIcon [field]="'name'"></p-sortIcon>
@@ -15,10 +14,7 @@
 		            <th [pSortableColumn]="'mobile'">
 						Mobile<p-sortIcon [field]="'mobile'"></p-sortIcon>
 					</th>
-					<th [pSortableColumn]="'username'">
-						Username<p-sortIcon [field]="'username'"></p-sortIcon>
-					</th>
-		            <th [pSortableColumn]="'total_customer'">
+					<th [pSortableColumn]="'total_customer'">
 						Customers<p-sortIcon [field]="'total_customer'"></p-sortIcon>
 					</th>
 		            <th [pSortableColumn]="''">
@@ -34,15 +30,11 @@
 				<tr>
 					<th></th>
 					<th></th>
-					<th></th>
 		            <th>
 		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'name', 'contains')">
 		            </th>
 		            <th>
 		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'mobile', 'contains')">
-		            </th>
-		            <th>
-		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'username', 'contains')">
 		            </th>
 		            <th>
 		            	<input pInputText type="text" class="w-100" (input)="dt.filter($event.target.value, 'total_customer', 'contains')">
@@ -56,13 +48,15 @@
 		    </ng-template>
 		    <ng-template pTemplate="body" let-rowData>
 		        <tr>
-					<td><span title="Edit" class="fa fa-fw fa-edit"></span></td>
-					<td><span title="Inactive" class="fa fa-fw fa-close"></span></td>
-					<td><span title="pay bonus" class="fa fa-inr"></span></td>
+					<td>
+						<a  (click)="confirm(rowData)" href="javascript:void(0)"><span title="Inactive" class="fa fa-fw fa-close"></span></a>
+					</td>
+					<td>
+						<a  (click)="payBonus(rowData)" href="javascript:void(0)"><span title="pay bonus" class="fa fa-inr"></span></a>
+					</td>
 		            <td>{{rowData.name}}</td>
 					<td>{{rowData.mobile}}</td>
-					<td>{{rowData.username}}</td>
-		            <td>{{rowData.total_customer}}</td>
+					<td>{{rowData.total_customer}}</td>
 		            <td>250</td>
 		            <td>500</td>
 		            <td>25-08-2018</td>
@@ -71,3 +65,4 @@
 		</p-table>
 	</div>
 </div>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425"></p-confirmDialog>

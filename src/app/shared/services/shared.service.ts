@@ -18,4 +18,8 @@ export class SharedService {
         console.log(errorResponse);
         this.messageService.add({severity: 'error', summary: 'Error', detail: errorResponse.message});
     }
+
+    handleError(errorResponse) {
+        
+    }
 }

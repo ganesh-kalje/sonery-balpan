@@ -12,5 +12,16 @@ export class CelebrityService {
         return this.http.get('./assets/api/celebrity.json');
     }
 
+    createCelebrity(requestData) {
+        return this.http.get('./assets/api/celebrity.json');
+    }
+
+    deleteCelebrity(recordId) {
+        return this.http.get('./assets/api/celebrity.json');
+    }
+
+    payCelbrityBonus(recordId) {
+        return this.http.get('./assets/api/celebrity.json');
+    }
 }
 

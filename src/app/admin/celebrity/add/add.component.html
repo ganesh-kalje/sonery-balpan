@@ -1,5 +1,5 @@
 <div [@routerTransition]> 
-  <form>
+  <form #celebrityForm="ngForm" novalidate (ngSubmit)="createCelebrity()">
     <p-panel header="Add Celebrity">
       <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
         <div class="ui-grid-row">
@@ -7,9 +7,11 @@
             Name *:
           </div>
           <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
+            <input pInputText type="text" required name="name" [(ngModel)] = "celebrity.name" #name="ngModel" />
           </div>
-          <div class="ui-grid-col-4"></div>
+          <div class="ui-grid-col-4">
+            <p-message severity="error" *ngIf="name.invalid && name.touched" text="Name is required"></p-message>
+          </div>
         </div>
 
         <div class="ui-grid-row">
@@ -17,9 +19,11 @@
             Address *:
           </div>
           <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
+            <input pInputText type="text" required name="address" [(ngModel)] = "celebrity.address" #address="ngModel"/>
           </div>
-          <div class="ui-grid-col-4"></div>
+          <div class="ui-grid-col-4">
+            <p-message severity="error" *ngIf="address.invalid && address.touched" text="Address is required"></p-message>
+          </div>
         </div>
 
         <div class="ui-grid-row">
@@ -27,29 +31,23 @@
             Mobile *:
           </div>
           <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
+            <input pInputText type="text" required name="mobile" [(ngModel)] = "celebrity.mobile" maxlength="10" pattern="[0-9]+" #mobile="ngModel"/>
           </div>
-          <div class="ui-grid-col-4"></div>
+          <div class="ui-grid-col-4">
+            <p-message severity="error" *ngIf="mobile.invalid && mobile.touched" text="Mobile should be 10 digit unique number."></p-message>
+          </div>
         </div>
-
-        <div class="ui-grid-row">
-          <div class="ui-grid-col-2">
-            Username *:
-          </div>
-          <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
-          </div>
-          <div class="ui-grid-col-4"></div>
-        </div>
-
+        
         <div class="ui-grid-row">
           <div class="ui-grid-col-2">
             Password *:
           </div>
           <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
+            <input pInputText type="password" required name="password" [(ngModel)] = "celebrity.password" #password="ngModel"/>
           </div>
-          <div class="ui-grid-col-4"></div>
+          <div class="ui-grid-col-4">
+            <p-message severity="error" *ngIf="password.invalid && password.touched" text="Password is required."></p-message>
+          </div>
         </div>
 
         <div class="ui-grid-row">
@@ -57,9 +55,11 @@
             Confirm Password *:
           </div>
           <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
+            <input pInputText type="password" required name="confirm_password" [(ngModel)] = "celebrity.confirm_password" #confirmPassword="ngModel"/>
           </div>
-          <div class="ui-grid-col-4"></div>
+          <div class="ui-grid-col-4">
+            <p-message severity="error" *ngIf="confirmPassword.invalid && confirmPassword.touched" text="Confirm Password is required."></p-message>
+          </div>
         </div>
 
         <div class="ui-grid-row">
@@ -67,7 +67,7 @@
             ADHAR Card Number:
           </div>
           <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
+            <input pInputText type="text" name="adhar_card" [(ngModel)] = "celebrity.adhar_card"/>
           </div>
           <div class="ui-grid-col-4"></div>
         </div>
@@ -77,14 +77,14 @@
             PAN Card Number:
           </div>
           <div class="ui-grid-col-6">
-            <input pInputText type="text"  placeholder="Required"/>
+            <input pInputText type="text" name="pan_card" [(ngModel)] = "celebrity.pan_card"/>
           </div>
           <div class="ui-grid-col-4"></div>
         </div>
         <div class="ui-grid-row">
           <div class="ui-grid-col-2"></div>
           <div class="ui-grid-col-6">
-            <button pButton type="submit" label="Submit"></button>
+            <button [disabled]="!celebrityForm.valid" pButton type="submit" label="Submit"></button>
           </div>
           <div class="ui-grid-col-4"></div>
         </div>

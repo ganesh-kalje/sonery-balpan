@@ -10,7 +10,7 @@ export class LoginService {
     constructor(private http: HttpClient) { }
 
     login(requestData): Observable<any> {
-        return this.http.get('../assets/api/login1.json');
+        return this.http.get('../assets/api/login.json');
     }
 
     logout() {
